@@ -47,12 +47,12 @@ public class ExtentReportsListener implements ITestListener {
 
 	public static synchronized ExtentTest startTest(String testName, String stepDesc) {
 		ExtentTest test = extentReports.createTest(testName, stepDesc);
-		extentTestMap.put((int) Thread.currentThread().getId(), test);
+		extentTestMap.put((int) Thread.currentThread().threadId(), test);
 		return test;
 	}
 
 	public static synchronized ExtentTest getTest() {
-		return extentTestMap.get((int) Thread.currentThread().getId());
+		return extentTestMap.get((int) Thread.currentThread().threadId());
 	}
 
 	@Override

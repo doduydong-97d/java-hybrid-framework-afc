@@ -29,9 +29,9 @@ public class GlobalConstants {
 	public static final String DYNAMIC_DATA_GRID_URL = "https://www.jqueryscript.net/demo/jQuery-Dynamic-Data-Grid-Plugin-appendGrid/";
 	public static final String FILE_UPLOAD_URL = "https://blueimp.github.io/jQuery-File-Upload/";
 
-	public static final long LONG_TIMEOUT = 30;
-	public static final long SHORT_TIMEOUT = 5;
-	public static final long ONE_SEC = 1;
+	public static final byte LONG_TIMEOUT = 30;
+	public static final byte SHORT_TIMEOUT = 5;
+	public static final byte ONE_SEC = 1;
 
 	enum BrowsersList {
 		FIREFOX, CHROME, EDGE;

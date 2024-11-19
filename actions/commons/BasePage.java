@@ -375,7 +375,7 @@ public class BasePage {
 		return ((JavascriptExecutor) driver).executeScript(javascript);
 	}
 
-	public void scrollToTopByJS(WebDriver driver) {
+	protected void scrollToTopByJS(WebDriver driver) {
 		((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-document.body.scrollHeight);");
 	}
 
@@ -435,7 +435,7 @@ public class BasePage {
 		WebElement element = getWebElement(driver, xpathLocator);
 		String originalStyle = element.getAttribute("style");
 		((JavascriptExecutor) driver).executeScript("arguments[0].setAttribute('style', 'border: 2px solid red; border-style: dashed;');", element);
-		sleepInSecond(oneSec);
+		sleepForSeconds(oneSec);
 		((JavascriptExecutor) driver).executeScript("arguments[0].setAttribute('style', '" + originalStyle + "');", element);
 	}
 
@@ -443,7 +443,7 @@ public class BasePage {
 		WebElement element = getWebElement(driver, xpathLocator, dynamicValues);
 		String originalStyle = element.getAttribute("style");
 		((JavascriptExecutor) driver).executeScript("arguments[0].setAttribute('style', 'border: 2px solid red; border-style: dashed;');", element);
-		sleepInSecond(oneSec);
+		sleepForSeconds(oneSec);
 		((JavascriptExecutor) driver).executeScript("arguments[0].setAttribute('style', '" + originalStyle + "');", element);
 	}
 
@@ -522,9 +522,9 @@ public class BasePage {
 		}
 	}
 
-	protected void sleepInSecond(long time) {
+	protected void sleepForSeconds(long seconds) {
 		try {
-			Thread.sleep(time * 1000);
+			Thread.sleep(seconds * 1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -534,8 +534,8 @@ public class BasePage {
 		driver.manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);
 	}
 
-	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
-	private long shortTimeout = GlobalConstants.SHORT_TIMEOUT;
-	private long oneSec = GlobalConstants.ONE_SEC;
+	private byte longTimeout = GlobalConstants.LONG_TIMEOUT;
+	private byte shortTimeout = GlobalConstants.SHORT_TIMEOUT;
+	private byte oneSec = GlobalConstants.ONE_SEC;
 
 }

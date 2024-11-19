@@ -33,7 +33,7 @@ public class FileUploadPageObject extends BasePage {
 	public void clickStartButtonOfFile(String fileNames) {
 		waitForElementClickable(driver, FileUploadPageUI.START_BUTTON_OF_FILE, fileNames);
 		clickElement(driver, FileUploadPageUI.START_BUTTON_OF_FILE, fileNames);
-		sleepInSecond(GlobalConstants.ONE_SEC);
+		sleepForSeconds(GlobalConstants.ONE_SEC);
 	}
 
 	public void clickAllStartButtonsOfFiles(String... fileNames) {
@@ -71,7 +71,7 @@ public class FileUploadPageObject extends BasePage {
 	public void clickDeleteButtonOfFile(String fileNames) {
 		waitForElementClickable(driver, FileUploadPageUI.DELETE_BUTTON_OF_FILE, fileNames);
 		clickElement(driver, FileUploadPageUI.DELETE_BUTTON_OF_FILE, fileNames);
-		sleepInSecond(GlobalConstants.ONE_SEC);
+		sleepForSeconds(GlobalConstants.ONE_SEC);
 	}
 
 	public void clickAllDeleteButtonsOfFiles(String... fileNames) {

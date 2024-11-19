@@ -192,7 +192,9 @@ public class BaseTest {
 						cmd = "pkill " + browserDriver;
 					}
 
-					Process process = Runtime.getRuntime().exec(cmd);
+					// Process process = Runtime.getRuntime().exec(cmd);
+					ProcessBuilder processBuilder = new ProcessBuilder(cmd.split(" "));
+					Process process = processBuilder.start();
 					process.waitFor();
 				} catch (IOException | InterruptedException e) {
 					log.error("Error while closing browser process: " + e.getMessage());
